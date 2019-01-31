@@ -44,7 +44,7 @@ public class ProcessPrime {
 
     private static Process makeProcess(int low, int upper) throws IOException {
         ProcessBuilder builder = new ProcessBuilder();
-        builder.redirectErrorStream(true).command("java", "it.imtlucca.lecture1.ComputePrime", "1", "" + low, "" + upper);
+        builder.redirectErrorStream(true).command("java", "it.imtlucca.lecture1.ComputePrimeE", "1", "" + low, "" + upper);
         return builder.start();
     }
 }
