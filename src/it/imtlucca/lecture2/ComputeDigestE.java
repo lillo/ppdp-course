@@ -43,9 +43,9 @@ public class ComputeDigestE implements Runnable {
     }
 
     public static void main(String[] args){
-        Executor executor = Executors.newSingleThreadExecutor();
-        // Executor executor = Executors.newFixedThreadPool(5);
-        // Executor executor = Executors.newCachedThreadPool();
+        //Executor executor = Executors.newSingleThreadExecutor();
+        //Executor executor = Executors.newFixedThreadPool(5);
+        Executor executor = Executors.newCachedThreadPool();
 
 
         for(String f : args){
