@@ -27,9 +27,10 @@ public class ComputePrime extends Thread {
     }
 
     public void run(){
-        for(int i=low; i <= upper; ++i)
-            if(isPrime(i))
+        for(int i=low; i <= upper; ++i) {
+            if (isPrime(i))
                 primes.add(i);
+        }
     }
 
     public static void main(String[] args){

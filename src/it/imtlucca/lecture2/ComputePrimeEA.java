@@ -54,7 +54,9 @@ public class ComputePrimeEA implements Callable<List<Integer>> {
         }
 
         try{
-            for(Future<List<Integer>> t : executor.invokeAll(ts)) {
+            List<Future<List<Integer>>> taskResults = executor.invokeAll(ts);
+
+            for(Future<List<Integer>> t :taskResults ) {
                 List<Integer> ints = t.get();
                 String numbers = ints.stream().map(Object::toString).collect(Collectors.joining(","));
                 System.out.printf("Result: %s\n", numbers);

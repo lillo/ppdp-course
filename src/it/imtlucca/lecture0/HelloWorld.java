@@ -1,7 +1,10 @@
 package it.imtlucca.lecture0;
 
+import java.io.IOException;
+
 public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, " + args[0]);
+    public static void main(String[] args) throws IOException {
+        System.out.println("Hello, ");
+        System.in.read();
     }
 }

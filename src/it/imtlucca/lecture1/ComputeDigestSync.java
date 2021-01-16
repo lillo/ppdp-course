@@ -56,7 +56,7 @@ public class ComputeDigestSync extends Thread {
 
         for(ComputeDigestSync t : ts){
             try {
-                t.join();
+                t.join(); // t is an instance of Thread
                 System.out.println(t.getDigest());
             } catch (InterruptedException e) {
                 e.printStackTrace();

@@ -10,6 +10,9 @@ public class SynchronizedCounter {
     public synchronized void increment() {
         c++;
     }
+    public synchronized void add2() {
+        increment(); increment();
+    }
 
     public synchronized void decrement() {
         c--;

@@ -42,9 +42,15 @@ public class ComputeDigestCallback implements Runnable {
 
     public static void main(String[] args){
         List<ComputeDigestCallback> ts = new ArrayList<>();
+        Consumer<String> callback = new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(">>>>>" + s);
+            }
+        };
 
         for(String f : args){
-            ComputeDigestCallback comp = new ComputeDigestCallback(f, System.out::println);
+            ComputeDigestCallback comp = new ComputeDigestCallback(f, callback);
             Thread t = new Thread(comp);
             t.start();
             ts.add(comp);

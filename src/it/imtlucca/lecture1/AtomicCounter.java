@@ -15,7 +15,7 @@ public class AtomicCounter {
     }
 
     public void increment(){
-        while(true){
+        while(true){ // T1 n ; T2 n = n + 1
             int existingValue = getValue();
             int newValue = existingValue + 1;
             if(counter.compareAndSet(existingValue, newValue))

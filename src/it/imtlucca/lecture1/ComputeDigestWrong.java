@@ -39,8 +39,11 @@ public class ComputeDigestWrong implements Runnable {
     }
 
     public String getDigest(){
+
         return resultDigest;
     }
+
+
     public static void main(String[] args){
         List<Thread> ts = new ArrayList<>();
         long startTime = System.nanoTime();
@@ -48,7 +51,7 @@ public class ComputeDigestWrong implements Runnable {
         for(String f : args){
             ComputeDigestWrong comp = new ComputeDigestWrong(f);
             Thread t = new Thread(comp);
-            t.start();
+            t.start();  // Start the thread
             System.out.println(comp.getDigest());
             ts.add(t);
         }

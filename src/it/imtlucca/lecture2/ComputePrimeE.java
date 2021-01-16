@@ -52,7 +52,8 @@ public class ComputePrimeE implements Callable<List<Integer>> {
 
         for(int i= low; i <= high; i += isize + 1){
             ComputePrimeE task = new ComputePrimeE(i, Math.min(i + isize, high));
-            ts.add(executor.submit(task));
+            Future<List<Integer>> taskResult = executor.submit(task);
+            ts.add(taskResult);
         }
 
         for(Future<List<Integer>> t : ts){
